@@ -1,25 +1,27 @@
-﻿using Domain.DomainModels.Products;
+﻿using CommonTypes.Enumerations;
+using Domain.DomainModels.Products;
 using Utilities.ReflectionTools;
 using static Utilities.Constants.ProductConstants;
 
 namespace DomainTest.Products
 {
-    public class ProductTestBuilder : ReflectionBuilder<ProductDomain, ProductTestBuilder>
+    public class ProductTestBuilder : ReflectionBuilder<Product, ProductTestBuilder>
     {
         private readonly ProductTestBuilder _builderInstance;
 
-        private static long _id = SomeId;
-        private static string _name = SomeProductName;
-        private static decimal _baseUnitPrice = SomeBaseUnitPrice;
-        private static decimal _profit = SomeProfit;
+        public long Id = SomeId;
+        public string Name = SomeProductName;
+        public decimal BaseUnitPrice = SomeBaseUnitPrice;
+        public decimal Profit = SomeProfit;
+        public ProductType ProductType = SomeProductType;
 
         public ProductTestBuilder()
         {
             _builderInstance = this;
         }
-        public override ProductDomain Build()
+        public override Product Build()
         {
-           return new ProductDomain(_id, _name, _baseUnitPrice, _profit);
+           return new Product(Id, Name, BaseUnitPrice, Profit, ProductType);
         }
     }
 }

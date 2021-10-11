@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CommonTypes.Enumerations;
 
 namespace Utilities.Constants
 {
@@ -12,7 +8,9 @@ namespace Utilities.Constants
         public const string SomeProductName = "SomeProductName";
         public const decimal SomeBaseUnitPrice = 10_000;
         public const decimal SomeProfit = 1000;
-        
+        public const ProductType SomeProductType = ProductType.Normal;
+
+
 
     }
 }
